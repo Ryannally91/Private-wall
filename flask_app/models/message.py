@@ -4,6 +4,8 @@ from flask_app import app
 import re, math
 from datetime import datetime
 from flask_app.models import user
+#test 
+from flask_app.static import Api_test.js
 
 class Message:
     db = 'users_and_messages'
