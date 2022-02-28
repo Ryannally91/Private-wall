@@ -1,5 +1,5 @@
 from flask_app.config.mysqlconnection import MySQLConnection, connectToMySQL
-from flask import flash
+from flask import flash, session
 from flask_app import app
 import re	# the regex module
 from flask_bcrypt import Bcrypt   
@@ -31,6 +31,8 @@ class User:
         Insert INTO users (first_name, last_name, email, password)
         VALUES (%(first_name)s, %(last_name)s, %(email)s,%(password)s)
         ;'''
+
+        session['first_name'] = data['first_name']
         return connectToMySQL(cls.db).query_db(query,data)
         #fat model:
         #user_id = connectToMySQL(cls.db).query_db(query,data)

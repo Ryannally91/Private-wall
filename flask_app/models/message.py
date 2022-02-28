@@ -38,13 +38,9 @@ class Message:
         query='''
         INSERT INTO messages (content, sender_id, recipient_id)
         VALUES (%(content)s,%(sender_id)s,%(recipient_id)s);''' # will need hidden input with recipient id when sending message
-         
         return connectToMySQL(cls.db).query_db(query,data)
 
     #READ
-  
-    
-
     @classmethod
     def get_all_messages(cls, id):
         data= {'id' : id}

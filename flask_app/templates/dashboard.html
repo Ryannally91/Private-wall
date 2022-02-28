@@ -24,7 +24,6 @@
     <!-- diplay all users -->
     <form action="/create_message" method="post">
       {% for user in all_users %}
-      
       <h4 class="danger mb-1">{{user.first_name}} </h4>
          <div class="input-group mb-3">
         <textarea name="content" id="" cols="30" rows="10" placeholder="{{user.first_name}}"></textarea>
